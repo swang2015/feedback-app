@@ -1,0 +1,11 @@
+Flask
+Flask-SQLAlchemy
+Flask-Bcrypt
+Flask-Login
+Flask-WTF
+Jinja2
+Werkzeug
+SQLAlchemy
+PyMySQL
+gunicorn
+itsdangerous

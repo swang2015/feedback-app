@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block title %} Feedback {% endblock %}
+
+{% block content %}
+
+<div class="container">
+    {% if current_user.is_authenticated %}
+    <p>Hello, {{ current_user.email }}!</p>
+    {% endif %}
+    {% if user_done > 1 %}
+    <p>Good job! You've submitted {{ user_done }} substitution pairs.</p>
+    {% endif %}
+    <div class="row mb-2">
+        <div class="col-md-5">
+            <div class="card item">
+                <img class="card-img center" src="{{ subs.orig.img_url }}" alt="Product Image">
+                <div class="card-body d-flex flex-column align-items-center">
+                    <strong class="d-inline-block mb-2 text-primary">{{ subs.orig.brand }}&nbsp;</strong>
+                    <h3 class="mb-0 text-center"><a class="text-dark" href="https://www.loblaws.ca/p/{{ subs.orig.prod_id }}">{{ subs.orig.prod_name }}</a></h3>
+                    <p class="card-text mb-auto">({{ subs.pc_sub.size }} {{ subs.pc_sub.uom }})</p>
+                    <div class="mb-1 text-muted">Product ID: {{ subs.orig.prod_id }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <img class="center arrow-img" src="/static/img/right_arrow.png" >
+        </div>
+        <div class="col-md-5">
+            <div class="card item">
+                <img class="card-img center" src="{{ subs.pc_sub.img_url }}" alt="Product Image">
+                <div class="card-body d-flex flex-column align-items-center">
+                    <strong class="d-inline-block mb-2 text-primary">{{ subs.pc_sub.brand }}&nbsp;</strong>
+                    <h3 class="mb-0 text-center"><a class="text-dark" href="https://www.loblaws.ca/p/{{ subs.pc_sub.prod_id }}">{{ subs.pc_sub.prod_name }}</a></h3>
+                    <p class="card-text mb-auto">({{ subs.pc_sub.size }} {{ subs.pc_sub.uom }})</p>
+                    <div class="mb-1 text-muted">Product ID: {{ subs.pc_sub.prod_id }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="jump">
+        <form method="post" action="/post_answer/{{ pair_id }}" id="answerform">
+            <div class="row mb-3">
+                <div class="col-sm-8 col-md-6 col-lg-4 vertical">
+                    <label for="{{ pair_id }}">Is this a good substitution?</label>
+                </div>
+                <div class="col vertical">
+                    <div class="input-group btn-group" id="radioBtn">
+                        <label class="btn btn-primary btn-lg" for="Y">YES
+                            <input type="radio" name="{{ pair_id }}" value="Y" id="Y">
+                        </label>
+                        <label class="btn btn-primary btn-lg" for="N">NO
+                            <input type="radio" name="{{ pair_id }}" value="N" id="N">
+                        </label>
+                    </div>
+                    <a class="skip" href="{{ url_for('main.start') }}">Skip!</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block title %} Homepage {% endblock %}
+{% block content %}
+<section id="get-start" class="text-center">
+	<div class="mx-auto">
+		<p class="display-1 font-weight-bold">Join us to evaluate and<br>improve Autosub algorithm!</p>
+		<a class="btn btn-lg btn-primary" href="{{ url_for('usersys.login') }}">Get Started</a>
+	</div>
+</section>
+
+<section id="faq" class="container">
+	<div class="question">
+		<h3>About the control substitution project</h3>
+		<p>The control substitution project was originated from the winner of 2017 LD Hackathon. On the cart review page, customer would see a list of similar control brand substitutions next to customer's shopping list.</p>
+		<img class="center q-img" src="/static/img/review_cart.jpg">
+		<p>By swapping cart items with control brand substitutions, customer accept control substitution offer and can save money. Also by promoting control brand, we can potentially make more margin.</p>
+	</div>
+	<div class="question">
+		<h3>Where are the test pairs from</h3>
+		<p>The pairs are generated from the Autosub algorithm. We extracted features from product dataset and filtered data based on various constraints. The price factor is not included in the test but will be served as a separate layer on top of the model output to filter data dynamically dependnig on the day's price and promotion in production scenario.</p>
+	</div>
+	<div class="question">
+		<h3>Why we need your feedback</h3>
+		<p>We don't have enough labeled data. The feedback we collect here is part of <a href="https://en.wikipedia.org/wiki/Active_learning_(machine_learning)">Active Learning</a> that we begin with a seed dataset to train an algorithm, the top-scoring pairs are then reviewed and used for evaluation and model improvement. It's more effective than labeling random pairs.</p>
+	</div>
+	<div class="question">
+		<h3>Review and label substitution pairs</h3>
+		<img class="center q-img" src="/static/img/page_instr.png">
+		<p>Click the YES/NO button at the bottom of the page to submit answer and it automatically leads you to the next pair.</p>
+	</div>
+	<div class="question">
+		<p>Thank you for your attendance &lt;3! </p>
+	</div>
+</section>
+
+{% endblock %}

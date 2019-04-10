@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% from "user/_macros.html" import render_field_with_errors %}
+{% block content %}
+<form action="{{ url_for('usersys.register') }}" method="POST" name="register_user_form" class="form-signin">
+	<h1 class="h3 mb-3 font-weight-normal">Register</h1>
+	{{ register_user_form.hidden_tag() }}
+	{{ render_field_with_errors(register_user_form.email, class="form-control") }}
+	{{ render_field_with_errors(register_user_form.password, class="form-control") }}
+	{{ render_field_with_errors(register_user_form.confirm, class="form-control") }}
+	<p><button class="btn btn-primary" type="submit">Register</button></p>
+	<a href="{{ url_for('usersys.login') }}{% if 'next' in request.args %}?next={{ request.args.next|urlencode }}{% endif %}">Sign in</a>
+</form>
+{% endblock %}

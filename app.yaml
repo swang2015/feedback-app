@@ -1,0 +1,9 @@
+runtime: python
+service: control-subs
+env: flex
+entrypoint: gunicorn -b :8080 main:app
+runtime_config:
+  python_version: 3
+api_version: 1
+beta_settings:
+  cloud_sql_instances: "demo:us-east1:subs"

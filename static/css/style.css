@@ -1,0 +1,137 @@
+img.logo {
+    display: inline-block;
+    margin: 0 auto;
+    height: 20px;
+}
+
+img.card-img {
+    width: 250px;
+    padding-top: 20px;
+}
+
+body {
+    padding-top: 5rem;
+}
+
+main {
+    min-height: 75vh;
+}
+
+section {
+    min-height: 40vh;
+}
+
+footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+
+.display-4 {
+  font-size: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .display-4 {
+    font-size: 3rem;
+  }
+}
+
+#radioBtn label {
+    color: #3276b1;
+    background-color: #fff;
+}
+
+#radioBtn label:hover, .click{
+    color: #fff !important;
+    background-color: #3276b1 !important;
+}
+
+input[type=radio] {
+    display:none;
+    margin:10px;
+}
+
+.item {
+    background-color: #e9ecef !important;
+    height: 100%;
+}
+
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img.arrow-img {
+    width: 50px;
+    padding-top: 200px;
+}
+
+.jump {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.sub-arrow {
+    text-align: center;
+}
+
+#get-start {
+    display: flex;
+    align-items: center; 
+    border: 1px solid rgba(0,0,0,.125);
+    background-image: url("/static/img/banner.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-clip: border-box;
+    border-radius: .25rem;
+    padding: 35px;
+}
+
+.start {
+    width: 100%;
+}
+
+.display-1 {
+    font-size: 45px;
+    margin-bottom: 35px;
+    color: #fff;
+    text-shadow: -2px -2px 2px rgba(255,255,255,.1), 2px 2px 2px rgba(122,66,7,.8);
+}
+
+@media (min-width: 768px) {
+  .display-1 {
+    font-size: 65px;
+  }
+}
+
+.question {
+    margin-top: 10vh;
+}
+
+img.q-img {
+    width: 50vw;
+}
+
+.vertical{
+    display: flex;
+    align-items: center;
+}
+
+.skip {
+    margin-left: 20px;
+}
